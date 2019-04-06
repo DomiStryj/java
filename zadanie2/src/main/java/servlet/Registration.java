@@ -1,37 +1,33 @@
 package servlet;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.sql.SQLException;
+public class Registration {
+    private String username;
+    private String password;
+    private String confirmPasword;
+    private String email;
 
-
-@WebServlet("/register")
-public class Registration extends HttpServlet {
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String user = req.getParameter("username");
-        String password = req.getParameter("password");
-        String confPassword = req.getParameter("confPassword");
-        String mail = req.getParameter("email");
-        Boolean samepassword = confPassword.equals(password);
-        if (!samepassword || password=="" || confPassword=="" || user=="" || mail=="") {
-            resp.sendRedirect("/bad.jsp");
-        }
-        else {
-            DataBase person= new DataBase();
-            try {
-                person.addUser(user, password, mail);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            }
-            resp.sendRedirect("/index.jsp");
-
-        }
+    public String getUsername(){
+        return username;
+    }
+    public void setUsername(String username){
+        this.username=username;
+    }
+    public String getPassword(){
+        return password;
+    }
+    public void setPassword(String password){
+        this.password=password;
+    }
+    public String getConfirmPasword(){
+        return confirmPasword;
+    }
+    public void setConfirmPasword(String confirmPasword){
+        this.confirmPasword=confirmPasword;
+    }
+    public String getEmail(){
+        return email;
+    }
+    public void setEmail(String email){
+        this.email=email;
     }
 }

@@ -1,20 +1,18 @@
 <html>
 <body>
 <form action="index" method="post">
-    <a href="regist.jsp">Register</a>
-
-    <title>new user</title>
-    <h3>Log in form</h3>
+    <a href="registration.jsp">Sign in</a>
+    <title>Registration form</title>
+    <h3>Sign in</h3>
     <table>
-        <td align="right"></td>Username:<br/>
-        <input name="user"><br/>
-        Password :<br/>
-        <input name="password" type="password"><br/>
-        <td/>
-        <br><input type="submit" value="Log in" name="login">
-        <table/>
-
-        <form/>
-
-        <body/>
-        <html/>
+        Username:</br>
+        <input name="username"></br>
+        Password:
+        <input name="password"></br>
+        Email:
+        <input name="email"></br>
+        <br><input type= "submit" value="Register" name="register"></br>
+    </table>
+</form>
+</body>
+</html>
